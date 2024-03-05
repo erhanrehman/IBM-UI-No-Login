@@ -1,0 +1,31 @@
+// src/app/admin/_admin-page.scss
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/components/button/button' as button;
+@use '@carbon/react/scss/components/data-table/data-table' as data-table;
+
+.admin-page-container {
+  padding: $spacing-05;
+
+  .bx--data-table-container {
+    @include data-table.data-table-container;
+  }
+
+  .bx--data-table-toolbar {
+    @include data-table.data-table-toolbar;
+  }
+
+  .bx--data-table {
+    @include data-table.data-table;
+  }
+
+  .bx--btn--danger {
+    @include button.button;
+    margin-left: $spacing-03;
+  }
+}
+.error {
+  color: red;
+  margin-top: 1rem;
+  font-size: 0.875rem; // Example size, adjust as needed
+}

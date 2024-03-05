@@ -1,0 +1,94 @@
+// Assuming usage of Carbon Design System's SCSS setup
+@use '@carbon/react/scss/components/file-uploader/file-uploader' as
+  file-uploader;
+@use '@carbon/react/scss/components/data-table/data-table' as data-table;
+@use '@carbon/react/scss/components/button/button' as button;
+@use '@carbon/react/scss/components/modal/modal' as modal;
+@use '@carbon/react/scss/globals/scss/colors';
+
+.racer-page-container {
+  padding: 2rem;
+
+  .racer-dashboard-title {
+    margin-bottom: 1rem;
+  }
+
+  .upload-instructions {
+    margin-bottom: 2rem;
+    color: colors.$text-02;
+  }
+
+  // Style the file uploader component
+  .bx--file-uploader {
+    @include file-uploader.file-uploader;
+    margin-bottom: 2rem;
+  }
+
+  // Style the data table component
+  .uploads-table {
+    @include data-table.data-table;
+    margin-top: 2rem;
+  }
+
+  // Style for the modal component
+  .training-modal {
+    @include modal.modal;
+
+    .car-selection,
+    .track-selection {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 1rem;
+
+      .car-button,
+      .track-button {
+        @include button.button;
+        margin-right: 1rem;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  // Specific styles for car buttons
+  .car-button {
+    &.red-car {
+      background-color: colors.$red-50;
+      color: colors.$white;
+
+      &:hover {
+        background-color: colors.$red-60;
+      }
+    }
+
+    &.blue-car {
+      background-color: colors.$blue-50;
+      color: colors.$white;
+
+      &:hover {
+        background-color: colors.$blue-60;
+      }
+    }
+
+    &.green-car {
+      background-color: colors.$green-50;
+      color: colors.$white;
+
+      &:hover {
+        background-color: colors.$green-60;
+      }
+    }
+  }
+
+  // Generic style for track buttons
+  .track-button {
+    background-color: colors.$cool-gray-10;
+    color: colors.$white;
+
+    &:hover {
+      background-color: colors.$cool-gray-20;
+    }
+  }
+}

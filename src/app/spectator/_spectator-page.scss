@@ -1,0 +1,68 @@
+// Assuming usage of Carbon Design System's SCSS setup
+@use '@carbon/react/scss/components/data-table/data-table' as data-table;
+@use '@carbon/react/scss/globals/scss/layout' as layout;
+@use '@carbon/react/scss/globals/scss/theme' as theme;
+@use '@carbon/react/scss/components/structured-list/structured-list' as
+  structured-list;
+
+.spectator-page-container {
+  padding: layout.$spacing-05;
+
+  .section {
+    margin-bottom: layout.$spacing-07;
+
+    &-title {
+      margin-bottom: layout.$spacing-04;
+      font-size: 1.25rem;
+      color: theme.$text-02;
+    }
+
+    &-content {
+      padding: layout.$spacing-04;
+      background-color: theme.$field-01;
+      border-radius: layout.$spacing-03;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .schedule-section {
+    .match {
+      padding: layout.$spacing-03 0;
+      border-bottom: 1px solid theme.$ui-03;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &-details {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  }
+
+  .stats-section {
+    @include data-table.data-table;
+
+    th {
+      background-color: theme.$interactive-01;
+      color: theme.$inverse-01;
+    }
+  }
+
+  .rankings-section {
+    @include structured-list.structured-list;
+
+    .bx--structured-list-row {
+      &:nth-child(odd) {
+        background-color: theme.$background-hover;
+      }
+    }
+
+    .bx--structured-list-th {
+      background-color: theme.$interactive-02;
+      color: theme.$inverse-01;
+    }
+  }
+}
